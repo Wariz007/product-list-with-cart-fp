@@ -1,0 +1,114 @@
+.main-container {
+    /*border: 2px solid magenta;*/
+    margin-inline: 1rem;
+    margin-block: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include respond-to(small) {
+        width: 70%;
+
+        .containers-div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .containers {
+                /*border: 2px solid magenta;*/
+                flex-direction: row;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .containers {
+        /*border: 2px solid orange;*/
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .image-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            border-radius: $default-border-radius;
+        }
+
+        .add-to-cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0.5rem;
+            padding-inline: 1rem;
+            border-radius: 50px;
+            background: white;
+            border: 1.5px solid gray;
+            cursor: pointer;
+            position: absolute;
+            width: fit-content;
+           
+            top: 89%;
+
+            p {
+                font-size: clamp(0.5rem, 0.42rem + 0.4vw, 0.9rem);
+                font-weight: bold;
+            }
+
+            img {
+                width: 25px;
+                height: auto;
+            }
+
+            .decrement-btn {
+                padding-block: 0.4rem;
+                padding-inline: 0.2rem;
+                background: transparent;
+                border: 1px solid white;
+                border-radius: 50px;
+                cursor: pointer;
+                img {
+                    width: 8px;
+                }
+            }
+            .increment-btn {
+                padding-block: 0.3rem;
+                padding-inline: 0.3rem;
+                background: transparent;
+                border: 1px solid white;
+                border-radius: 50px;
+                cursor: pointer;
+                img {
+                    width: 6px;
+                }
+            }
+            .counter {font-size: 0.8rem; color: white;}
+        }
+    }
+
+    .dessert-details {
+        /*border: 2px solid magenta;*/
+        margin-block-start: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .dessert-category {
+            color: $Rose-500;
+        }
+        .dessert-name {
+            color: $Rose-900;
+        }
+        .dessert-price {
+            color: $red;
+        }
+    }
+
+    
+}

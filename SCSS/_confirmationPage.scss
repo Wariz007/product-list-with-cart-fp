@@ -1,0 +1,126 @@
+.confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.confirmation-page {
+    @include respond-to(small) {
+        position: absolute;
+        /*border: 2px solid magenta;*/
+        border-radius: 10px;
+        height: fit-content;
+        width: 30rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000; 
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    /*border: 2px solid magenta;*/
+    padding: 1rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 100vh;
+
+    img {width: 50px;}
+
+    h1 {font-size: 2rem;}
+
+    p {color: $Rose-500;}
+
+    .selectedDesserts-div {
+        /*border: 2px solid magenta;*/
+        padding: 1rem;
+        background: $Rose-100;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-block: 0.5rem;
+        
+        .receipt-item {
+            /*border: 2px solid magenta;*/
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-block-end: 0.5rem;
+            border-bottom: 1px solid $Rose-500;
+
+            .image-and-details {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+
+                .receipt-dessert-name {
+                    font-weight: bold;
+                    color: $Rose-900;
+                }
+
+                #quantity {
+                    font-weight: bold;
+                    color: $red;
+                }
+
+                img {
+                    width: 70px;
+                    border-radius: 5px;
+                }
+            }
+
+            .totalP {
+                font-weight: bold;
+                color: $Rose-900;
+            }
+        }
+
+    }
+
+    .totalPriceDiv {
+        /*border: 2px solid magenta;*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: $Rose-100;
+        border-radius: 5px;
+
+        span {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+
+    .start-new-order-btn {
+        padding: 1rem;
+        background: $red;
+        border-radius: 50px;
+        color: white;
+        border: 0px;
+        margin-top: 0.5rem;
+
+        transition: background 0.3s ease, transform 0.2s ease;
+
+        &:hover,
+        &:focus {
+            background: darken($red, 10%);
+            transform: scale(1.02);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+}

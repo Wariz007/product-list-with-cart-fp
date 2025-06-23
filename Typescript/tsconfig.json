@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "module": "ESNext",
+      "outDir": "../dist",             // JS goes to ../dist
+      "rootDir": "./src",              // TS source files live in ./src
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true
+    },
+    "include": ["src", "script.ts"]
+  }  

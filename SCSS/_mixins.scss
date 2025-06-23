@@ -1,0 +1,10 @@
+// _mixins.scss - MOBILE-FIRST VERSION
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == small {
+        @media (min-width: 601px) { @content; } // Applies ABOVE mobile
+    } @else if $breakpoint == medium {
+        @media (min-width: 901px) { @content; } // Applies ABOVE tablet
+    } @else if $breakpoint == large {
+        @media (min-width: 1201px) { @content; } // Applies ABOVE desktop
+    }
+}
